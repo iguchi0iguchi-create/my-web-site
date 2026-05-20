@@ -3,36 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Web Site</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #f7f7f7;
-    }
-
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 64px 24px;
-    }
-
-    h1 {
-      margin-bottom: 16px;
-      font-size: 2.4rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-    }
-  </style>
+  <title>自己紹介 | My Web Site</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>こんにちは</h1>
-    <p>これはGitHub Pagesで公開するシンプルなWebサイトです。</p>
+  <main class="profile">
+    <section class="hero">
+      <p class="eyebrow">Profile</p>
+      <h1>こんにちは</h1>
+      <p class="lead">
+        これはGitHub Pagesで公開する、自己紹介のためのWebサイトです。
+      </p>
+    </section>
+
+    <section class="content-grid" aria-label="自己紹介">
+      <article class="card">
+        <h2>About</h2>
+        <p>
+          ここに自己紹介文を入れます。学んでいること、興味のある分野、
+          好きなことなどを自由に紹介できます。
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Interests</h2>
+        <ul class="tag-list">
+          <li>Web制作</li>
+          <li>プログラミング</li>
+          <li>デザイン</li>
+        </ul>
+      </article>
+    </section>
   </main>
 </body>
 </html>
