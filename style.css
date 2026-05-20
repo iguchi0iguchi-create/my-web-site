@@ -1,330 +1,307 @@
 :root {
-  --background: #f7f3e8;
-  --surface: #ffffff;
-  --text: #263126;
-  --muted: #66715f;
-  --leaf: #2f7d46;
-  --leaf-dark: #1f5d36;
-  --leaf-soft: #dcefd5;
-  --soil: #7a5634;
-  --sun: #f5b84b;
-  --sky: #d9eef5;
-  --border: #ddd4bf;
-  --shadow: 0 20px 50px rgba(57, 72, 48, 0.14);
+  --concrete: #d8d6ce;
+  --ink: #171a17;
+  --muted: #646960;
+  --paper: #f5f2e9;
+  --steel: #343a38;
+  --line: #b9b5aa;
+  --leaf: #2c7a3f;
+  --leaf-bright: #7abd63;
+  --signal: #e0b449;
+  --shadow: 0 28px 70px rgba(23, 26, 23, 0.18);
 }
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  line-height: 1.7;
-  color: var(--text);
-  background:
-    linear-gradient(180deg, rgba(217, 238, 245, 0.88), transparent 340px),
-    url("assets/plant-growth-pattern.svg"),
-    var(--background);
-  background-size: auto, 520px 220px, auto;
-  background-position: top left, top 28px right -80px, top left;
+html {
+  scroll-behavior: smooth;
 }
 
-.garden {
-  width: min(1080px, calc(100% - 40px));
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  line-height: 1.75;
+  background:
+    linear-gradient(90deg, rgba(23, 26, 23, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(23, 26, 23, 0.05) 1px, transparent 1px),
+    var(--concrete);
+  background-size: 44px 44px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 18px clamp(20px, 5vw, 64px);
+  background: rgba(245, 242, 233, 0.88);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+
+.brand,
+nav a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand {
+  font-size: 1.05rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 0.86rem;
+}
+
+main {
+  width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 56px 0;
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 32px;
-  align-items: end;
-  min-height: 420px;
-  padding: 56px;
-  color: #f9fff7;
-  background:
-    linear-gradient(135deg, rgba(31, 93, 54, 0.95), rgba(47, 125, 70, 0.9)),
-    linear-gradient(90deg, var(--soil) 0 100%);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
   position: relative;
+  display: grid;
+  min-height: calc(100vh - 72px);
+  align-items: end;
+  padding: clamp(36px, 7vw, 76px);
+  color: #fffdf5;
+  background:
+    linear-gradient(90deg, rgba(18, 20, 18, 0.86), rgba(18, 20, 18, 0.28)),
+    linear-gradient(0deg, rgba(18, 20, 18, 0.7), transparent 48%),
+    url("assets/urban-balcony-garden.jpg");
+  background-size: cover;
+  background-position: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
 }
 
 .hero::before {
   content: "";
   position: absolute;
-  inset: auto -80px -58px -80px;
-  height: 150px;
+  inset: 0;
   background:
-    radial-gradient(circle at 18% 36%, rgba(245, 184, 75, 0.95) 0 7px, transparent 8px),
-    linear-gradient(180deg, #8b633d, var(--soil));
+    url("assets/plant-growth-pattern.svg") right 6% bottom 8% / min(480px, 58vw) auto no-repeat,
+    linear-gradient(180deg, transparent 0 72%, rgba(44, 122, 63, 0.42));
+  mix-blend-mode: screen;
+  opacity: 0.75;
+  pointer-events: none;
 }
 
-.hero-copy {
+.hero::after {
+  content: "";
+  position: absolute;
+  right: clamp(18px, 5vw, 72px);
+  bottom: 0;
+  width: 1px;
+  height: 72%;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.hero-copy,
+.hero-meta {
   position: relative;
   z-index: 1;
 }
 
-.eyebrow {
-  margin: 0 0 12px;
+.eyebrow,
+.date,
+.number {
+  margin: 0;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #dff1c4;
+}
+
+.eyebrow {
+  color: var(--leaf-bright);
 }
 
 h1,
 h2,
-p,
-ul,
-dl {
+p {
   margin-top: 0;
 }
 
 h1 {
-  margin-bottom: 18px;
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
-  line-height: 1.1;
+  max-width: 780px;
+  margin-bottom: 22px;
+  font-size: clamp(3rem, 10vw, 8rem);
+  line-height: 0.95;
 }
 
 .lead {
-  max-width: 620px;
+  max-width: 720px;
   margin-bottom: 0;
-  font-size: 1.18rem;
-  color: #e4f3de;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  color: #e8eadf;
 }
 
-.growth-rail {
-  position: relative;
-  z-index: 1;
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 48px;
+  color: #dfe5d8;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.hero-meta span {
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.intro {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: end;
-  gap: 18px;
-  min-height: 190px;
-  padding: 24px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  grid-template-columns: minmax(0, 760px);
+  justify-content: end;
+  padding: clamp(54px, 9vw, 110px) 0;
 }
 
-.stage {
-  position: relative;
-  display: block;
-  width: 100%;
-  min-height: 54px;
+.intro p {
+  margin-bottom: 0;
+  font-size: clamp(1.3rem, 3vw, 2.3rem);
+  line-height: 1.55;
 }
 
-.stage::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 10px;
-  background: #6d4c30;
-  border-radius: 999px;
-}
-
-.seed::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  width: 18px;
-  height: 12px;
-  background: #d5a15f;
-  border-radius: 50%;
-  transform: translateX(-50%) rotate(-18deg);
-}
-
-.sprout::before,
-.leaves::before,
-.bloom::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  width: 6px;
-  background: #bfe8a9;
-  border-radius: 999px;
-  transform: translateX(-50%);
-}
-
-.sprout::before {
-  height: 48px;
-  box-shadow:
-    -13px -22px 0 -3px #bfe8a9,
-    13px -28px 0 -3px #d8f4c9;
-}
-
-.leaves::before {
-  height: 88px;
-  box-shadow:
-    -22px -42px 0 2px #bfe8a9,
-    20px -58px 0 3px #d8f4c9,
-    -18px -74px 0 0 #97d37f;
-}
-
-.bloom::before {
-  height: 126px;
-  box-shadow:
-    -24px -58px 0 4px #bfe8a9,
-    22px -82px 0 4px #d8f4c9,
-    -18px -104px 0 2px #97d37f,
-    0 -134px 0 8px var(--sun);
-}
-
-.summary {
+.spaces {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 24px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
 }
 
-.summary article {
-  padding: 22px;
-  background: rgba(255, 255, 255, 0.86);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  box-shadow: 0 10px 28px rgba(57, 72, 48, 0.08);
+.spaces article {
+  min-height: 280px;
+  padding: 30px;
+  background: var(--paper);
 }
 
-.label,
+.spaces article + article {
+  border-left: 1px solid var(--ink);
+}
+
+.number {
+  display: block;
+  margin-bottom: 72px;
+  color: var(--leaf);
+}
+
+.spaces h2,
+.feature-card h2 {
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.spaces h2 {
+  font-size: 1.5rem;
+}
+
+.spaces p,
+.feature-card p {
+  color: var(--muted);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 22px;
+  padding: 24px 0 72px;
+}
+
+.feature-card {
+  min-height: 300px;
+  padding: clamp(26px, 4vw, 44px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.feature-card.large {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  min-height: 620px;
+  background:
+    linear-gradient(180deg, rgba(245, 242, 233, 0.22), rgba(245, 242, 233, 0.94)),
+    url("assets/urban-balcony-garden.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.feature-card.dark {
+  color: #f5f2e9;
+  background:
+    linear-gradient(135deg, rgba(44, 122, 63, 0.2), transparent),
+    var(--steel);
+  border-color: #4d5551;
+}
+
+.feature-card.dark p,
+.feature-card.dark .date {
+  color: #c9d3c3;
+}
+
 .date {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--muted);
-  font-size: 0.86rem;
-  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--leaf);
 }
 
-.summary strong {
-  display: block;
-  font-size: 1.08rem;
+.feature-card h2 {
+  font-size: clamp(1.45rem, 3vw, 2.6rem);
 }
 
-.content-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 24px;
-}
-
-.record-card,
-.note-panel {
-  padding: 32px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(31, 41, 51, 0.08);
-}
-
-.record-card {
-  border-top: 5px solid var(--leaf);
-}
-
-.record-card.featured {
-  grid-column: span 2;
-  background:
-    linear-gradient(135deg, rgba(220, 239, 213, 0.78), transparent 42%),
-    var(--surface);
-}
-
-.record-card h2,
-.note-panel h2 {
-  margin-bottom: 12px;
-  font-size: 1.35rem;
-}
-
-.record-card p {
+.feature-card p:last-child {
   margin-bottom: 0;
-  color: var(--muted);
 }
 
-.record-data {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin: 24px 0 0;
-}
-
-.record-data div {
-  padding: 14px;
-  background: #f7f3e8;
-  border-radius: 8px;
-}
-
-.record-data dt {
-  color: var(--muted);
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.record-data dd {
-  margin: 2px 0 0;
-  font-weight: 700;
-}
-
-.note-panel {
-  margin-top: 24px;
-  background:
-    linear-gradient(90deg, rgba(245, 184, 75, 0.22), transparent),
-    var(--surface);
-}
-
-.note-panel ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  padding: 0;
-  margin-bottom: 0;
-  list-style: none;
-}
-
-.note-panel li {
-  padding: 14px 16px;
-  color: var(--leaf-dark);
-  background: var(--leaf-soft);
-  border-radius: 8px;
-  font-weight: 700;
-}
-
-@media (max-width: 720px) {
-  body {
-    background-size: auto, 360px 160px, auto;
-    background-position: top left, top 16px right -120px, top left;
+@media (max-width: 800px) {
+  .site-header {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  .garden {
-    width: min(100% - 28px, 960px);
-    padding: 36px 0;
+  main {
+    width: min(100% - 28px, 1180px);
   }
 
   .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    padding: 28px;
+    min-height: 720px;
   }
 
-  .growth-rail {
-    min-height: 150px;
-    padding: 18px;
+  .intro {
+    justify-content: start;
   }
 
-  .summary,
-  .content-grid,
-  .note-panel ul {
+  .spaces,
+  .feature-grid {
     grid-template-columns: 1fr;
   }
 
-  .record-card,
-  .record-card.featured {
-    grid-column: auto;
+  .spaces article + article {
+    border-top: 1px solid var(--ink);
+    border-left: 0;
+  }
+
+  .number {
+    margin-bottom: 40px;
+  }
+
+  .feature-card.large {
+    min-height: 520px;
   }
 }

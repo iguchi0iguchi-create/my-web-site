@@ -3,86 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>家庭菜園の成長記録</title>
+  <title>2㎡農園 | 都市の余白を耕すメディア</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="garden">
+  <header class="site-header">
+    <a class="brand" href="#">2㎡農園</a>
+    <nav aria-label="メインナビゲーション">
+      <a href="#spaces">余白空間</a>
+      <a href="#notes">記録</a>
+      <a href="#manifesto">思想</a>
+    </nav>
+  </header>
+
+  <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Garden Log</p>
-        <h1>家庭菜園の成長記録</h1>
+        <p class="eyebrow">Urban Micro Garden Media</p>
+        <h1>東京の2㎡農園</h1>
         <p class="lead">
-          種まきから収穫まで、毎日の変化をゆっくり残していくための記録サイトです。
+          ベランダ、窓辺、室外機の横。都市の余白を少しだけ耕し、
+          コンクリートの隙間に育つ生命力を記録するメディア。
         </p>
       </div>
-      <div class="growth-rail" aria-hidden="true">
-        <span class="stage seed"></span>
-        <span class="stage sprout"></span>
-        <span class="stage leaves"></span>
-        <span class="stage bloom"></span>
+      <div class="hero-meta" aria-label="媒体概要">
+        <span>Issue 01</span>
+        <span>Balcony / Window / Utility Space</span>
       </div>
     </section>
 
-    <section class="summary" aria-label="今日の畑">
+    <section class="intro" id="manifesto">
+      <p>
+        広い庭はない。けれど、街には使われていない数十センチの余白がある。
+        そこに土を置き、種をまき、朝の光を測る。これは都市生活の中で、
+        ほんの小さく自分のリズムを取り戻すための静かな反抗だ。
+      </p>
+    </section>
+
+    <section class="spaces" id="spaces" aria-label="余白空間の特集">
       <article>
-        <span class="label">今日の観察</span>
-        <strong>葉の色が濃くなってきた</strong>
+        <span class="number">01</span>
+        <h2>ベランダ</h2>
+        <p>洗濯物と手すりの間に置く、鉢ひとつ分の農園。</p>
       </article>
       <article>
-        <span class="label">水やり</span>
-        <strong>朝にたっぷり</strong>
+        <span class="number">02</span>
+        <h2>窓辺</h2>
+        <p>朝だけ差す光を読む、室内と外気の境界線。</p>
       </article>
       <article>
-        <span class="label">天気</span>
-        <strong>晴れ</strong>
+        <span class="number">03</span>
+        <h2>室外機の横</h2>
+        <p>熱と風を避けながら、街の機械音のそばで育てる。</p>
       </article>
     </section>
 
-    <section class="content-grid" aria-label="成長記録">
-      <article class="record-card featured">
-        <p class="date">2026.05.20</p>
-        <h2>ミニトマト</h2>
+    <section class="feature-grid" id="notes" aria-label="成長記録">
+      <article class="feature-card large">
+        <p class="date">2026.05.20 / Tomato</p>
+        <h2>排水溝の手前、18cmのミニトマト</h2>
         <p>
-          苗を植えてから少し背が伸び、茎がしっかりしてきました。
-          支柱を立てて、風で倒れないようにしました。
-        </p>
-        <dl class="record-data">
-          <div>
-            <dt>高さ</dt>
-            <dd>18cm</dd>
-          </div>
-          <div>
-            <dt>作業</dt>
-            <dd>支柱立て</dd>
-          </div>
-        </dl>
-      </article>
-
-      <article class="record-card">
-        <p class="date">2026.05.18</p>
-        <h2>バジル</h2>
-        <p>
-          新しい葉が増えて、香りも強くなってきました。土の表面が乾いたら水をあげます。
+          雨水の流れを避けて鉢をずらす。支柱は細い鉄製。
+          風の通り道に置かれた苗は、昨日より少しだけ濃い緑をしていた。
         </p>
       </article>
 
-      <article class="record-card">
-        <p class="date">2026.05.15</p>
-        <h2>きゅうり</h2>
+      <article class="feature-card">
+        <p class="date">2026.05.18 / Basil</p>
+        <h2>窓枠の内側にある香り</h2>
         <p>
-          つるが伸び始めました。次はネットに沿わせて、成長しやすい形に整えます。
+          直射日光は二時間。足りないぶん、葉はゆっくり広がっていく。
         </p>
       </article>
-    </section>
 
-    <section class="note-panel" aria-label="次にやること">
-      <h2>次にやること</h2>
-      <ul>
-        <li>朝の葉の状態を写真で残す</li>
-        <li>土の乾き具合を確認する</li>
-        <li>伸びた茎やつるを支柱に固定する</li>
-      </ul>
+      <article class="feature-card dark">
+        <p class="date">2026.05.15 / Cucumber</p>
+        <h2>室外機の風を避ける</h2>
+        <p>
+          つるをネットへ逃がす。人工的な風と本物の成長が同じ場所にある。
+        </p>
+      </article>
     </section>
   </main>
 </body>
