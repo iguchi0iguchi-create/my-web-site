@@ -3,36 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>自己紹介 | My Web Site</title>
+  <title>家庭菜園の成長記録</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="profile">
+  <main class="garden">
     <section class="hero">
-      <p class="eyebrow">Profile</p>
-      <h1>こんにちは</h1>
-      <p class="lead">
-        これはGitHub Pagesで公開する、自己紹介のためのWebサイトです。
-      </p>
+      <div class="hero-copy">
+        <p class="eyebrow">Garden Log</p>
+        <h1>家庭菜園の成長記録</h1>
+        <p class="lead">
+          種まきから収穫まで、毎日の変化をゆっくり残していくための記録サイトです。
+        </p>
+      </div>
+      <div class="growth-rail" aria-hidden="true">
+        <span class="stage seed"></span>
+        <span class="stage sprout"></span>
+        <span class="stage leaves"></span>
+        <span class="stage bloom"></span>
+      </div>
     </section>
 
-    <section class="content-grid" aria-label="自己紹介">
-      <article class="card">
-        <h2>About</h2>
+    <section class="summary" aria-label="今日の畑">
+      <article>
+        <span class="label">今日の観察</span>
+        <strong>葉の色が濃くなってきた</strong>
+      </article>
+      <article>
+        <span class="label">水やり</span>
+        <strong>朝にたっぷり</strong>
+      </article>
+      <article>
+        <span class="label">天気</span>
+        <strong>晴れ</strong>
+      </article>
+    </section>
+
+    <section class="content-grid" aria-label="成長記録">
+      <article class="record-card featured">
+        <p class="date">2026.05.20</p>
+        <h2>ミニトマト</h2>
         <p>
-          ここに自己紹介文を入れます。学んでいること、興味のある分野、
-          好きなことなどを自由に紹介できます。
+          苗を植えてから少し背が伸び、茎がしっかりしてきました。
+          支柱を立てて、風で倒れないようにしました。
+        </p>
+        <dl class="record-data">
+          <div>
+            <dt>高さ</dt>
+            <dd>18cm</dd>
+          </div>
+          <div>
+            <dt>作業</dt>
+            <dd>支柱立て</dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="record-card">
+        <p class="date">2026.05.18</p>
+        <h2>バジル</h2>
+        <p>
+          新しい葉が増えて、香りも強くなってきました。土の表面が乾いたら水をあげます。
         </p>
       </article>
 
-      <article class="card">
-        <h2>Interests</h2>
-        <ul class="tag-list">
-          <li>Web制作</li>
-          <li>プログラミング</li>
-          <li>デザイン</li>
-        </ul>
+      <article class="record-card">
+        <p class="date">2026.05.15</p>
+        <h2>きゅうり</h2>
+        <p>
+          つるが伸び始めました。次はネットに沿わせて、成長しやすい形に整えます。
+        </p>
       </article>
+    </section>
+
+    <section class="note-panel" aria-label="次にやること">
+      <h2>次にやること</h2>
+      <ul>
+        <li>朝の葉の状態を写真で残す</li>
+        <li>土の乾き具合を確認する</li>
+        <li>伸びた茎やつるを支柱に固定する</li>
+      </ul>
     </section>
   </main>
 </body>

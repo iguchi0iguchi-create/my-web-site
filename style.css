@@ -1,12 +1,16 @@
 :root {
-  --background: #f4f0ea;
+  --background: #f7f3e8;
   --surface: #ffffff;
-  --text: #1f2933;
-  --muted: #65727f;
-  --accent: #0f766e;
-  --accent-soft: #d7f1ed;
-  --border: #e1ded8;
-  --shadow: 0 20px 50px rgba(31, 41, 51, 0.12);
+  --text: #263126;
+  --muted: #66715f;
+  --leaf: #2f7d46;
+  --leaf-dark: #1f5d36;
+  --leaf-soft: #dcefd5;
+  --soil: #7a5634;
+  --sun: #f5b84b;
+  --sky: #d9eef5;
+  --border: #ddd4bf;
+  --shadow: 0 20px 50px rgba(57, 72, 48, 0.14);
 }
 
 * {
@@ -20,22 +24,49 @@ body {
   line-height: 1.7;
   color: var(--text);
   background:
-    linear-gradient(135deg, rgba(15, 118, 110, 0.12), transparent 36%),
+    linear-gradient(180deg, rgba(217, 238, 245, 0.88), transparent 340px),
+    url("assets/plant-growth-pattern.svg"),
     var(--background);
+  background-size: auto, 520px 220px, auto;
+  background-position: top left, top 28px right -80px, top left;
 }
 
-.profile {
-  width: min(960px, calc(100% - 40px));
+.garden {
+  width: min(1080px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 72px 0;
+  padding: 56px 0;
 }
 
 .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 32px;
+  align-items: end;
+  min-height: 420px;
   padding: 56px;
-  color: #ffffff;
-  background: #1f2933;
+  color: #f9fff7;
+  background:
+    linear-gradient(135deg, rgba(31, 93, 54, 0.95), rgba(47, 125, 70, 0.9)),
+    linear-gradient(90deg, var(--soil) 0 100%);
   border-radius: 8px;
   box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: auto -80px -58px -80px;
+  height: 150px;
+  background:
+    radial-gradient(circle at 18% 36%, rgba(245, 184, 75, 0.95) 0 7px, transparent 8px),
+    linear-gradient(180deg, #8b633d, var(--soil));
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
@@ -44,12 +75,14 @@ body {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent-soft);
+  color: #dff1c4;
 }
 
 h1,
 h2,
-p {
+p,
+ul,
+dl {
   margin-top: 0;
 }
 
@@ -63,17 +96,128 @@ h1 {
   max-width: 620px;
   margin-bottom: 0;
   font-size: 1.18rem;
-  color: #dce4ea;
+  color: #e4f3de;
+}
+
+.growth-rail {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
+  gap: 18px;
+  min-height: 190px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+.stage {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 54px;
+}
+
+.stage::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 10px;
+  background: #6d4c30;
+  border-radius: 999px;
+}
+
+.seed::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: 18px;
+  height: 12px;
+  background: #d5a15f;
+  border-radius: 50%;
+  transform: translateX(-50%) rotate(-18deg);
+}
+
+.sprout::before,
+.leaves::before,
+.bloom::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: 6px;
+  background: #bfe8a9;
+  border-radius: 999px;
+  transform: translateX(-50%);
+}
+
+.sprout::before {
+  height: 48px;
+  box-shadow:
+    -13px -22px 0 -3px #bfe8a9,
+    13px -28px 0 -3px #d8f4c9;
+}
+
+.leaves::before {
+  height: 88px;
+  box-shadow:
+    -22px -42px 0 2px #bfe8a9,
+    20px -58px 0 3px #d8f4c9,
+    -18px -74px 0 0 #97d37f;
+}
+
+.bloom::before {
+  height: 126px;
+  box-shadow:
+    -24px -58px 0 4px #bfe8a9,
+    22px -82px 0 4px #d8f4c9,
+    -18px -104px 0 2px #97d37f,
+    0 -134px 0 8px var(--sun);
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.summary article {
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(57, 72, 48, 0.08);
+}
+
+.label,
+.date {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.summary strong {
+  display: block;
+  font-size: 1.08rem;
 }
 
 .content-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 24px;
 }
 
-.card {
+.record-card,
+.note-panel {
   padding: 32px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -81,46 +225,106 @@ h1 {
   box-shadow: 0 10px 30px rgba(31, 41, 51, 0.08);
 }
 
-.card h2 {
-  margin-bottom: 12px;
-  font-size: 1.2rem;
+.record-card {
+  border-top: 5px solid var(--leaf);
 }
 
-.card p {
+.record-card.featured {
+  grid-column: span 2;
+  background:
+    linear-gradient(135deg, rgba(220, 239, 213, 0.78), transparent 42%),
+    var(--surface);
+}
+
+.record-card h2,
+.note-panel h2 {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+}
+
+.record-card p {
   margin-bottom: 0;
   color: var(--muted);
 }
 
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.record-data {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0 0;
+}
+
+.record-data div {
+  padding: 14px;
+  background: #f7f3e8;
+  border-radius: 8px;
+}
+
+.record-data dt {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.record-data dd {
+  margin: 2px 0 0;
+  font-weight: 700;
+}
+
+.note-panel {
+  margin-top: 24px;
+  background:
+    linear-gradient(90deg, rgba(245, 184, 75, 0.22), transparent),
+    var(--surface);
+}
+
+.note-panel ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
   padding: 0;
-  margin: 0;
+  margin-bottom: 0;
   list-style: none;
 }
 
-.tag-list li {
-  padding: 8px 12px;
-  font-size: 0.92rem;
+.note-panel li {
+  padding: 14px 16px;
+  color: var(--leaf-dark);
+  background: var(--leaf-soft);
+  border-radius: 8px;
   font-weight: 700;
-  color: #0b5f59;
-  background: var(--accent-soft);
-  border-radius: 999px;
 }
 
 @media (max-width: 720px) {
-  .profile {
+  body {
+    background-size: auto, 360px 160px, auto;
+    background-position: top left, top 16px right -120px, top left;
+  }
+
+  .garden {
     width: min(100% - 28px, 960px);
     padding: 36px 0;
   }
 
-  .hero,
-  .card {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
     padding: 28px;
   }
 
-  .content-grid {
+  .growth-rail {
+    min-height: 150px;
+    padding: 18px;
+  }
+
+  .summary,
+  .content-grid,
+  .note-panel ul {
     grid-template-columns: 1fr;
+  }
+
+  .record-card,
+  .record-card.featured {
+    grid-column: auto;
   }
 }
