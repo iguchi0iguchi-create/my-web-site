@@ -1,0 +1,97 @@
+{
+  "regionId": "kanto",
+  "regionName": "関東市場",
+  "shortName": "関東",
+  "updatedAt": "2026-05-21 06:30",
+  "quest": {
+    "title": "1000円以内で最強カレー素材を集めろ！",
+    "copy": "にんじん・玉ねぎが買い時。肉屋の門番はまだ強い。"
+  },
+  "vegetables": [
+    {
+      "name": "にんじん",
+      "price": 98,
+      "unit": "3本",
+      "change": -35,
+      "score": 96,
+      "rarity": "RARE ITEM",
+      "status": "rare",
+      "copy": "今なら主婦ギルド推奨。カレー、きんぴら、スープで三連撃。",
+      "photo": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 96, "utility": 88, "keep": 82 },
+      "history": [162, 148, 136, 128, 118, 104, 98],
+      "comparePrice": 112
+    },
+    {
+      "name": "大根",
+      "price": 128,
+      "unit": "1本",
+      "change": -24,
+      "score": 88,
+      "rarity": "DROP DUNGEON",
+      "status": "crash",
+      "copy": "暴落ダンジョン入口で発見。煮物パーティに即加入。",
+      "photo": "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 88, "utility": 76, "keep": 70 },
+      "history": [168, 162, 154, 148, 142, 134, 128],
+      "comparePrice": 148
+    },
+    {
+      "name": "玉ねぎ",
+      "price": 158,
+      "unit": "3個",
+      "change": -18,
+      "score": 91,
+      "rarity": "HARVEST EVENT",
+      "status": "harvest",
+      "copy": "豊作イベント発生。炒め物の基礎火力が上がる。",
+      "photo": "https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 82, "utility": 96, "keep": 90 },
+      "history": [192, 188, 181, 176, 169, 162, 158],
+      "comparePrice": 138
+    },
+    {
+      "name": "キャベツ",
+      "price": 298,
+      "unit": "1玉",
+      "change": 42,
+      "score": 42,
+      "rarity": "BOSS",
+      "status": "boss",
+      "copy": "価格高騰BOSS出現。ロールキャベツ城は今日は危険。",
+      "photo": "https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 28, "utility": 82, "keep": 72 },
+      "history": [210, 218, 236, 248, 264, 282, 298],
+      "comparePrice": 248
+    },
+    {
+      "name": "レタス",
+      "price": 238,
+      "unit": "1玉",
+      "change": 28,
+      "score": 51,
+      "rarity": "WARNING",
+      "status": "warning",
+      "copy": "雨不足デバフで相場が暴走中。サラダ編成は慎重に。",
+      "photo": "https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 42, "utility": 70, "keep": 44 },
+      "history": [186, 191, 198, 204, 216, 226, 238],
+      "comparePrice": 268
+    },
+    {
+      "name": "トマト",
+      "price": 228,
+      "unit": "4個",
+      "change": -9,
+      "score": 84,
+      "rarity": "SEASON BUFF",
+      "status": "season",
+      "copy": "期間限定バフ。冷やし中華の装備枠に強い。",
+      "photo": "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 70, "utility": 84, "keep": 58 },
+      "history": [250, 246, 242, 238, 234, 230, 228],
+      "comparePrice": 218
+    }
+  ],
+  "seasonBonus": ["トマト", "玉ねぎ"]
+}

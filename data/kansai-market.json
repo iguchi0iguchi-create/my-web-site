@@ -1,0 +1,97 @@
+{
+  "regionId": "kansai",
+  "regionName": "関西市場",
+  "shortName": "関西",
+  "updatedAt": "2026-05-21 06:30",
+  "quest": {
+    "title": "粉もんギルドの薬味を守れ！",
+    "copy": "ネギ急落。今日のたこ焼き部隊はMP消費が軽い。"
+  },
+  "vegetables": [
+    {
+      "name": "ネギ",
+      "price": 108,
+      "unit": "1束",
+      "change": -31,
+      "score": 94,
+      "rarity": "DROP DUNGEON",
+      "status": "crash",
+      "copy": "関西市場でネギ価格急落。薬味の剣が二刀流になる。",
+      "photo": "https://images.unsplash.com/photo-1615560127642-0e5a5a495a10?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 94, "utility": 86, "keep": 66 },
+      "history": [156, 151, 146, 139, 128, 118, 108],
+      "comparePrice": 142
+    },
+    {
+      "name": "玉ねぎ",
+      "price": 138,
+      "unit": "3個",
+      "change": -22,
+      "score": 95,
+      "rarity": "HARVEST EVENT",
+      "status": "harvest",
+      "copy": "豊作イベント発生。カレー、牛丼、味噌汁で連続攻撃。",
+      "photo": "https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 90, "utility": 96, "keep": 90 },
+      "history": [177, 172, 166, 158, 151, 144, 138],
+      "comparePrice": 158
+    },
+    {
+      "name": "なす",
+      "price": 168,
+      "unit": "3本",
+      "change": -20,
+      "score": 87,
+      "rarity": "SEASON BUFF",
+      "status": "season",
+      "copy": "旬の期間限定バフ。揚げびたし魔法がよく通る。",
+      "photo": "https://images.unsplash.com/photo-1604245437608-50c6bb8d4ee5?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 84, "utility": 78, "keep": 54 },
+      "history": [210, 204, 198, 188, 181, 174, 168],
+      "comparePrice": 198
+    },
+    {
+      "name": "レタス",
+      "price": 268,
+      "unit": "1玉",
+      "change": 35,
+      "score": 39,
+      "rarity": "BOSS",
+      "status": "boss",
+      "copy": "価格暴走BOSS。サンドイッチ城の門番が強すぎる。",
+      "photo": "https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 26, "utility": 70, "keep": 44 },
+      "history": [198, 205, 214, 226, 238, 252, 268],
+      "comparePrice": 238
+    },
+    {
+      "name": "キャベツ",
+      "price": 248,
+      "unit": "1玉",
+      "change": 18,
+      "score": 62,
+      "rarity": "WARNING",
+      "status": "warning",
+      "copy": "お好み焼き需要でじわ高。粉もん勇者は在庫確認。",
+      "photo": "https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 58, "utility": 86, "keep": 72 },
+      "history": [210, 214, 218, 226, 234, 241, 248],
+      "comparePrice": 298
+    },
+    {
+      "name": "にんじん",
+      "price": 112,
+      "unit": "3本",
+      "change": -12,
+      "score": 86,
+      "rarity": "RARE ITEM",
+      "status": "rare",
+      "copy": "安定のレア素材。弁当クエストで地味に強い。",
+      "photo": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=900&q=80",
+      "stats": { "cheap": 82, "utility": 88, "keep": 82 },
+      "history": [128, 126, 123, 121, 118, 115, 112],
+      "comparePrice": 98
+    }
+  ],
+  "seasonBonus": ["なす", "ネギ"]
+}

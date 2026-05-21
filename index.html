@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="scanlines" aria-hidden="true"></div>
@@ -26,23 +27,27 @@
     </nav>
   </header>
 
+  <section class="region-switcher" aria-label="地域切替">
+    <p class="switch-label">MARKET SELECT</p>
+    <div class="region-tabs" role="tablist" aria-label="市場地域">
+      <button class="region-tab is-active" type="button" role="tab" aria-selected="true" data-region="kanto" data-api="data/kanto-market.json">
+        関東市場
+      </button>
+      <button class="region-tab" type="button" role="tab" aria-selected="false" data-region="kansai" data-api="data/kansai-market.json">
+        関西市場
+      </button>
+    </div>
+    <p class="api-status" data-api-status>API: data/kanto-market.json</p>
+  </section>
+
   <main class="game-layout">
     <aside class="window news-window" id="news" aria-label="本日の市場ニュース">
       <div class="window-title"><span></span>市場速報</div>
-      <article class="bulletin warning">
-        <p class="tag">WARNING</p>
-        <h2>レタス価格が暴走しています</h2>
-        <p>雨不足デバフで相場 +28%。サラダ編成は慎重に。</p>
-      </article>
-      <article class="bulletin event">
-        <p class="tag">EVENT</p>
-        <h2>玉ねぎ大豊作</h2>
-        <p>市場イベント発生。カレー素材の基礎火力が上昇中。</p>
-      </article>
+      <div class="market-log" data-news-log aria-live="polite"></div>
       <article class="quest-box">
         <p class="tag">TODAY'S QUEST</p>
-        <h2>1000円以内で最強カレー素材を集めろ！</h2>
-        <p class="cursor-line">買い物勇者よ、広告の裏面を開け。</p>
+        <h2 data-quest-title>1000円以内で最強カレー素材を集めろ！</h2>
+        <p class="cursor-line" data-quest-copy>買い物勇者よ、広告の裏面を開け。</p>
       </article>
     </aside>
 
@@ -50,49 +55,37 @@
       <div class="window-title"><span></span>おすすめ野菜カード</div>
       <article class="vegetable-card rare">
         <div class="card-photo">
-          <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=900&q=80" alt="にんじんのリアル写真">
-          <p class="rarity">RARE ITEM</p>
+          <img data-recommend-photo src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=900&q=80" alt="にんじんのリアル写真">
+          <p class="rarity" data-recommend-rarity>RARE ITEM</p>
         </div>
         <div class="card-body">
-          <p class="encounter">にんじんを発見！</p>
-          <h2>本日の最強コスパ野菜</h2>
+          <p class="encounter" data-recommend-encounter>にんじんを発見！</p>
+          <h2 data-recommend-name>本日の最強コスパ野菜</h2>
           <div class="price-row">
-            <span class="price">98円</span>
-            <span class="down">市場価格 -35%</span>
+            <span class="price" data-recommend-price>98円</span>
+            <span class="down" data-recommend-change>市場価格 -35%</span>
           </div>
-          <p>今なら主婦ギルド推奨。カレー、きんぴら、スープで三連撃。</p>
+          <p data-recommend-copy>今なら主婦ギルド推奨。カレー、きんぴら、スープで三連撃。</p>
           <dl class="stats">
             <div>
               <dt>安さ</dt>
-              <dd><span style="width: 96%"></span></dd>
+              <dd><span data-stat-cheap style="width: 96%"></span></dd>
             </div>
             <div>
               <dt>汎用</dt>
-              <dd><span style="width: 88%"></span></dd>
+              <dd><span data-stat-utility style="width: 88%"></span></dd>
             </div>
             <div>
               <dt>保存</dt>
-              <dd><span style="width: 82%"></span></dd>
+              <dd><span data-stat-keep style="width: 82%"></span></dd>
             </div>
           </dl>
         </div>
       </article>
 
       <div class="party-row" aria-label="季節ボーナス野菜">
-        <article>
-          <img src="https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?auto=format&fit=crop&w=500&q=80" alt="トマトのリアル写真">
-          <div>
-            <p>期間限定バフ</p>
-            <strong>トマト</strong>
-          </div>
-        </article>
-        <article>
-          <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=500&q=80" alt="ほうれん草のリアル写真">
-          <div>
-            <p>鉄分EXP +12</p>
-            <strong>ほうれん草</strong>
-          </div>
-        </article>
+        <article data-bonus-card="0"></article>
+        <article data-bonus-card="1"></article>
       </div>
     </section>
 
@@ -101,25 +94,17 @@
 
       <section class="ranking-block">
         <h2>値下がりランキング</h2>
-        <ol class="rank-list bargain">
-          <li><span>1</span><strong>にんじん</strong><em>-35%</em></li>
-          <li><span>2</span><strong>大根</strong><em>-24%</em></li>
-          <li><span>3</span><strong>玉ねぎ</strong><em>-18%</em></li>
-        </ol>
+        <ol class="rank-list bargain" data-discount-ranking></ol>
       </section>
 
       <section class="ranking-block">
         <h2>値上がり警報</h2>
-        <ol class="rank-list danger">
-          <li><span>!</span><strong>キャベツ</strong><em>BOSS出現</em></li>
-          <li><span>!</span><strong>レタス</strong><em>暴走中</em></li>
-          <li><span>!</span><strong>きゅうり</strong><em>小ボス</em></li>
-        </ol>
+        <ol class="rank-list danger" data-warning-ranking></ol>
       </section>
 
-      <div class="boss-alert">
-        <p>キャベツ価格高騰</p>
-        <strong>BOSS 出現</strong>
+      <div class="boss-alert" data-boss-alert>
+        <p data-boss-title>キャベツ価格高騰</p>
+        <strong data-boss-label>BOSS 出現</strong>
       </div>
     </aside>
 
@@ -128,30 +113,18 @@
       <div class="chart-grid">
         <article class="chart-card">
           <div class="chart-head">
-            <h2>価格推移</h2>
+            <h2 data-chart-title>価格推移</h2>
             <p>7 DAYS</p>
           </div>
-          <div class="pixel-chart" aria-label="野菜価格の推移を表す棒グラフ">
-            <span style="height: 62%"><b>月</b></span>
-            <span style="height: 44%"><b>火</b></span>
-            <span style="height: 58%"><b>水</b></span>
-            <span style="height: 36%"><b>木</b></span>
-            <span style="height: 24%"><b>金</b></span>
-            <span style="height: 34%"><b>土</b></span>
-            <span class="today" style="height: 18%"><b>今日</b></span>
-          </div>
+          <div class="pixel-chart" data-price-chart aria-label="野菜価格の推移を表す棒グラフ"></div>
         </article>
 
         <article class="chart-card dungeon">
           <div class="chart-head">
-            <h2>暴落ダンジョン</h2>
-            <p>DROP</p>
+            <h2>地域別価格比較</h2>
+            <p>VS</p>
           </div>
-          <ul class="dungeon-list">
-            <li><strong>大根</strong><span>地下3階で -24%</span></li>
-            <li><strong>白菜</strong><span>冷蔵庫容量に注意</span></li>
-            <li><strong>もやし</strong><span>常設チュートリアル</span></li>
-          </ul>
+          <ul class="dungeon-list compare-list" data-compare-list></ul>
         </article>
 
         <article class="chart-card summary">
@@ -165,7 +138,11 @@
           </div>
           <div class="meter">
             <span>今日の節約火力</span>
-            <strong>SS</strong>
+            <strong data-saver-rank>SS</strong>
+          </div>
+          <div class="meter">
+            <span>選択中市場</span>
+            <strong data-active-region>関東</strong>
           </div>
         </article>
       </div>
