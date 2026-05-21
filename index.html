@@ -3,86 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2㎡農園 | 都市の余白を耕すメディア</title>
+  <title>野菜相場クエスト | 今日いちばん安くて強い野菜を探す市場冒険</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#">2㎡農園</a>
-    <nav aria-label="メインナビゲーション">
-      <a href="#spaces">余白空間</a>
-      <a href="#notes">記録</a>
-      <a href="#manifesto">思想</a>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="game-header">
+    <div class="logo-block">
+      <p class="save-slot">SAVE 05/21 06:30</p>
+      <h1>野菜相場クエスト</h1>
+      <p class="subtitle">今日いちばん安くて強い野菜を探す市場冒険</p>
+    </div>
+    <nav class="command-menu" aria-label="市場コマンド">
+      <a href="#news">NEWS</a>
+      <a href="#recommend">ITEM</a>
+      <a href="#ranking">RANK</a>
+      <a href="#chart">CHART</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Urban Micro Garden Media</p>
-        <h1>東京の2㎡農園</h1>
-        <p class="lead">
-          ベランダ、窓辺、室外機の横。都市の余白を少しだけ耕し、
-          コンクリートの隙間に育つ生命力を記録するメディア。
-        </p>
+  <main class="game-layout">
+    <aside class="window news-window" id="news" aria-label="本日の市場ニュース">
+      <div class="window-title"><span></span>市場速報</div>
+      <article class="bulletin warning">
+        <p class="tag">WARNING</p>
+        <h2>レタス価格が暴走しています</h2>
+        <p>雨不足デバフで相場 +28%。サラダ編成は慎重に。</p>
+      </article>
+      <article class="bulletin event">
+        <p class="tag">EVENT</p>
+        <h2>玉ねぎ大豊作</h2>
+        <p>市場イベント発生。カレー素材の基礎火力が上昇中。</p>
+      </article>
+      <article class="quest-box">
+        <p class="tag">TODAY'S QUEST</p>
+        <h2>1000円以内で最強カレー素材を集めろ！</h2>
+        <p class="cursor-line">買い物勇者よ、広告の裏面を開け。</p>
+      </article>
+    </aside>
+
+    <section class="window hero-window" id="recommend" aria-label="今日のおすすめ野菜">
+      <div class="window-title"><span></span>おすすめ野菜カード</div>
+      <article class="vegetable-card rare">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=900&q=80" alt="にんじんのリアル写真">
+          <p class="rarity">RARE ITEM</p>
+        </div>
+        <div class="card-body">
+          <p class="encounter">にんじんを発見！</p>
+          <h2>本日の最強コスパ野菜</h2>
+          <div class="price-row">
+            <span class="price">98円</span>
+            <span class="down">市場価格 -35%</span>
+          </div>
+          <p>今なら主婦ギルド推奨。カレー、きんぴら、スープで三連撃。</p>
+          <dl class="stats">
+            <div>
+              <dt>安さ</dt>
+              <dd><span style="width: 96%"></span></dd>
+            </div>
+            <div>
+              <dt>汎用</dt>
+              <dd><span style="width: 88%"></span></dd>
+            </div>
+            <div>
+              <dt>保存</dt>
+              <dd><span style="width: 82%"></span></dd>
+            </div>
+          </dl>
+        </div>
+      </article>
+
+      <div class="party-row" aria-label="季節ボーナス野菜">
+        <article>
+          <img src="https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?auto=format&fit=crop&w=500&q=80" alt="トマトのリアル写真">
+          <div>
+            <p>期間限定バフ</p>
+            <strong>トマト</strong>
+          </div>
+        </article>
+        <article>
+          <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=500&q=80" alt="ほうれん草のリアル写真">
+          <div>
+            <p>鉄分EXP +12</p>
+            <strong>ほうれん草</strong>
+          </div>
+        </article>
       </div>
-      <div class="hero-meta" aria-label="媒体概要">
-        <span>Issue 01</span>
-        <span>Balcony / Window / Utility Space</span>
+    </section>
+
+    <aside class="window rank-window" id="ranking" aria-label="価格ランキング">
+      <div class="window-title"><span></span>価格ランキング</div>
+
+      <section class="ranking-block">
+        <h2>値下がりランキング</h2>
+        <ol class="rank-list bargain">
+          <li><span>1</span><strong>にんじん</strong><em>-35%</em></li>
+          <li><span>2</span><strong>大根</strong><em>-24%</em></li>
+          <li><span>3</span><strong>玉ねぎ</strong><em>-18%</em></li>
+        </ol>
+      </section>
+
+      <section class="ranking-block">
+        <h2>値上がり警報</h2>
+        <ol class="rank-list danger">
+          <li><span>!</span><strong>キャベツ</strong><em>BOSS出現</em></li>
+          <li><span>!</span><strong>レタス</strong><em>暴走中</em></li>
+          <li><span>!</span><strong>きゅうり</strong><em>小ボス</em></li>
+        </ol>
+      </section>
+
+      <div class="boss-alert">
+        <p>キャベツ価格高騰</p>
+        <strong>BOSS 出現</strong>
       </div>
-    </section>
+    </aside>
 
-    <section class="intro" id="manifesto">
-      <p>
-        広い庭はない。けれど、街には使われていない数十センチの余白がある。
-        そこに土を置き、種をまき、朝の光を測る。これは都市生活の中で、
-        ほんの小さく自分のリズムを取り戻すための静かな反抗だ。
-      </p>
-    </section>
+    <section class="window chart-window" id="chart" aria-label="市場価格チャート">
+      <div class="window-title"><span></span>市場価格チャート</div>
+      <div class="chart-grid">
+        <article class="chart-card">
+          <div class="chart-head">
+            <h2>価格推移</h2>
+            <p>7 DAYS</p>
+          </div>
+          <div class="pixel-chart" aria-label="野菜価格の推移を表す棒グラフ">
+            <span style="height: 62%"><b>月</b></span>
+            <span style="height: 44%"><b>火</b></span>
+            <span style="height: 58%"><b>水</b></span>
+            <span style="height: 36%"><b>木</b></span>
+            <span style="height: 24%"><b>金</b></span>
+            <span style="height: 34%"><b>土</b></span>
+            <span class="today" style="height: 18%"><b>今日</b></span>
+          </div>
+        </article>
 
-    <section class="spaces" id="spaces" aria-label="余白空間の特集">
-      <article>
-        <span class="number">01</span>
-        <h2>ベランダ</h2>
-        <p>洗濯物と手すりの間に置く、鉢ひとつ分の農園。</p>
-      </article>
-      <article>
-        <span class="number">02</span>
-        <h2>窓辺</h2>
-        <p>朝だけ差す光を読む、室内と外気の境界線。</p>
-      </article>
-      <article>
-        <span class="number">03</span>
-        <h2>室外機の横</h2>
-        <p>熱と風を避けながら、街の機械音のそばで育てる。</p>
-      </article>
-    </section>
+        <article class="chart-card dungeon">
+          <div class="chart-head">
+            <h2>暴落ダンジョン</h2>
+            <p>DROP</p>
+          </div>
+          <ul class="dungeon-list">
+            <li><strong>大根</strong><span>地下3階で -24%</span></li>
+            <li><strong>白菜</strong><span>冷蔵庫容量に注意</span></li>
+            <li><strong>もやし</strong><span>常設チュートリアル</span></li>
+          </ul>
+        </article>
 
-    <section class="feature-grid" id="notes" aria-label="成長記録">
-      <article class="feature-card large">
-        <p class="date">2026.05.20 / Tomato</p>
-        <h2>排水溝の手前、18cmのミニトマト</h2>
-        <p>
-          雨水の流れを避けて鉢をずらす。支柱は細い鉄製。
-          風の通り道に置かれた苗は、昨日より少しだけ濃い緑をしていた。
-        </p>
-      </article>
-
-      <article class="feature-card">
-        <p class="date">2026.05.18 / Basil</p>
-        <h2>窓枠の内側にある香り</h2>
-        <p>
-          直射日光は二時間。足りないぶん、葉はゆっくり広がっていく。
-        </p>
-      </article>
-
-      <article class="feature-card dark">
-        <p class="date">2026.05.15 / Cucumber</p>
-        <h2>室外機の風を避ける</h2>
-        <p>
-          つるをネットへ逃がす。人工的な風と本物の成長が同じ場所にある。
-        </p>
-      </article>
+        <article class="chart-card summary">
+          <div class="chart-head">
+            <h2>勇者ステータス</h2>
+            <p>SHOPPER</p>
+          </div>
+          <div class="meter">
+            <span>予算</span>
+            <strong>1000G</strong>
+          </div>
+          <div class="meter">
+            <span>今日の節約火力</span>
+            <strong>SS</strong>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 </body>
